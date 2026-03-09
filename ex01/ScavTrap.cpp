@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 14:23:25 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/03/08 18:03:04 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/03/09 11:29:11 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,19 @@ ScavTrap& ScavTrap::operator= (const ScavTrap& source)
 	this->_energyPoints = source._energyPoints;
 	this->_attackDamage = source._attackDamage;
 	return *this;
+}
+
+void	ScavTrap::attack(const std::string &target)
+{
+	if (this->_hitPoints <= 0 || this->_energyPoints <= 0)
+	{
+		std::cout << "ScavTrap " << target << " has no more hit points"
+			<< " or no more energy"<< std::endl;
+		return ;
+	}
+	std::cout << "ScavTrap " << _name << " attacks " << target
+		<< ", causing " << this->_attackDamage << " point of damage" << std::endl;
+	this->_energyPoints -= 1;
 }
 
 void	ScavTrap::guardGate()

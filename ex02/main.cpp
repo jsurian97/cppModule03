@@ -6,7 +6,7 @@
 /*   By: jsurian42 <jsurian@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 11:20:07 by jsurian42         #+#    #+#             */
-/*   Updated: 2026/03/07 17:06:33 by jsurian42        ###   ########.fr       */
+/*   Updated: 2026/03/09 11:35:39 by jsurian42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int main()
 		}
 		if (strcmp(entry.c_str(), "attack") == 0)
 		{
-			b.attack(b.getName());
-			a.takeDamage(1);
+			a.attack(b.getName());
+			b.takeDamage(1);
 		}
 		else if (strcmp(entry.c_str(), "repaired") == 0)
 			b.beRepaired(1);
